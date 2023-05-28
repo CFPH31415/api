@@ -1,0 +1,24 @@
+<div class="header">
+  <h1 class="title">Pokedex</h1>
+</div>
+
+<div class="content">
+  <input type="text" class="search-input" placeholder="Nombre o ID" #search>
+  <button class="search-button" (click)="buscar(search.value)">Buscar</button>
+</div>
+
+<div class="pokedex-box">
+  <div *ngFor="let x of almacen" class="pokemon-card">
+    <div [ngStyle]="{'background-color': x.color1}" class="pokemon-color"></div>
+    <div [ngStyle]="{'background-color': x.color2}" class="pokemon-color"></div>
+    <div class="pokemon-details">
+      <img src="{{ x.sprite }}" (click)="buscar(x.name)">
+      <p class="pokemon-name">{{ x.name }}</p>
+      <p class="pokemon-id">#{{ x.id }}</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #alternateTemplate>
+  <div class="alternate-box grow"></div>
+</ng-template>

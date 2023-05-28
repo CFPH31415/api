@@ -1,0 +1,49 @@
+<div class="container">
+  <header>
+    <h1>{{pokemon.name | uppercase}}</h1>
+  </header>
+  <main>
+    <div class="pokemon-info">
+      <div class="pokemon-images">
+        <div>
+          <p>Version normal</p>
+          <img [src]="pokemon.sprite" alt="Normal">
+        </div>
+        <div>
+          <p>Version shiny</p>
+          <img [src]="pokemon.spriteShiny" alt="Shiny">
+        </div>
+      </div>
+      <div class="pokemon-details">
+        <div class="detail">
+          <span class="font-bold">Tipo:</span>
+          <div class="type" [ngStyle]="{'background-color':pokemon.color1}">{{pokemon.tipo1}}</div>
+          <div class="type" [ngStyle]="{'background-color':pokemon.color2}">{{pokemon.tipo2}}</div>
+        </div>
+        <div class="detail">
+          <span class="font-bold">Peso:</span>
+          <p>{{pokemon.peso}}Kg.</p>
+        </div>
+        <div class="detail">
+          <span class="font-bold">Altura:</span>
+          <p>{{pokemon.height}}cm</p>
+        </div>
+        <div class="detail">
+          <span class="font-bold">Habilidad:</span>
+          <p>{{pokemon.habilidad}}</p>
+        </div>
+        <div class="detail">
+          <span class="font-bold">Movimiento 1:</span>
+          <p>{{pokemon.skill1}}</p>
+        </div>
+        <div class="detail">
+          <span class="font-bold">Movimiento 2:</span>
+          <p>{{pokemon.skill2}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button (click)="regresar()" class="back-button">Regresar</button>
+    </div>
+  </main>
+</div>
